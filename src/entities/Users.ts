@@ -18,7 +18,7 @@ export class Users {
 	@Column({ type: 'varchar', length: 15 })
 	nickname: string;
 
-	@Column({ type: 'string' })
+	@Column({ type: 'varchar', select: false })
 	password: string;
 
 	@CreateDateColumn()
