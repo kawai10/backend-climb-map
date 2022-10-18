@@ -1,7 +1,6 @@
 import {
 	Column,
 	CreateDateColumn,
-	DeleteDateColumn,
 	Entity,
 	PrimaryGeneratedColumn,
 	UpdateDateColumn,
@@ -12,21 +11,21 @@ export class Users {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@Column({ type: 'varchar', unique: true })
-	email: string;
+	@Column({ type: 'varchar', unique: true, length: 15 })
+	loginId: string;
 
-	@Column({ type: 'varchar', length: 15 })
+	@Column({ type: 'varchar' })
 	nickname: string;
 
 	@Column({ type: 'varchar', select: false })
 	password: string;
+
+	@Column({ type: 'varchar' })
+	profilePhoto: string;
 
 	@CreateDateColumn()
 	createAt: Date;
 
 	@UpdateDateColumn()
 	updatedAt: Date;
-
-	@DeleteDateColumn()
-	deletedAt: Date;
 }
