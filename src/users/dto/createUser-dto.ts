@@ -1,27 +1,14 @@
-import {
-	IsNotEmpty,
-	IsString,
-	Matches,
-	MaxLength,
-	MinLength,
-} from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
+import { CommonUserdto } from './commonUser-dto';
 
-export class createUserDto {
-	@IsString()
-	@IsNotEmpty()
-	@MaxLength(15)
-	@Matches(/^\w+$/)
+export class createUserDto extends CommonUserdto {
 	loginId: string;
+
+	password: string;
 
 	@IsString()
 	@IsNotEmpty()
 	nickname: string;
-
-	@IsString()
-	@IsNotEmpty()
-	@MinLength(8)
-	@Matches(/^[!@#$%^&*()]+\w+$/)
-	password: string;
 
 	@IsString()
 	profilePhoto: string;
