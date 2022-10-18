@@ -10,7 +10,7 @@ export class createUserDto {
 	@IsString()
 	@IsNotEmpty()
 	@MaxLength(15)
-	@Matches('/[\\w\\d]')
+	@Matches(/^\w+$/)
 	loginId: string;
 
 	@IsString()
@@ -20,7 +20,7 @@ export class createUserDto {
 	@IsString()
 	@IsNotEmpty()
 	@MinLength(8)
-	@Matches('/[!@#$%^&*()]/\\w\\d/')
+	@Matches(/^[!@#$%^&*()]+\w+$/)
 	password: string;
 
 	@IsString()
